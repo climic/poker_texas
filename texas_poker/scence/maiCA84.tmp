@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ikk1xwga4qgw"]
+
+[ext_resource type="PackedScene" uid="uid://bybdqtpggrmws" path="res://nodes/draw_and_reveal.tscn" id="1_qvypk"]
+
+[node name="main" type="Node2D"]
+
+[node name="draw_and_reveal" parent="." instance=ExtResource("1_qvypk")]

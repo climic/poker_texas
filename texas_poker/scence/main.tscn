@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://ikk1xwga4qgw"]
+
+[ext_resource type="Script" path="res://codes/main.gd" id="1_jjlkn"]
+[ext_resource type="PackedScene" uid="uid://bg36rkdul85tm" path="res://nodes/variables_control.tscn" id="2_fjg38"]
+[ext_resource type="Script" path="res://codes/graph.gd" id="3_qr423"]
+[ext_resource type="PackedScene" uid="uid://d0b0wgvck6ekk" path="res://nodes/grid.tscn" id="4_245ba"]
+[ext_resource type="Script" path="res://codes/policy_clever.gd" id="5_u3x0g"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_jjlkn")
+pf = 0.0
+pc = 1.0
+pr = 0.0
+pf_o = 0.01
+pc_o = 0.99
+pr_o = 0.0
+prs_o = 0.0
+prb_o = 1.0
+pra_o = 0.0
+G = 5
+
+[node name="variables_control" parent="." instance=ExtResource("2_fjg38")]
+M = 5
+
+[node name="graph" type="Node2D" parent="."]
+script = ExtResource("3_qr423")
+grid_scene = ExtResource("4_245ba")
+x_max = 200
+
+[node name="clever" type="Node2D" parent="."]
+script = ExtResource("5_u3x0g")
+
+[connection signal="match_finished" from="." to="graph" method="add_result"]
+[connection signal="series_started" from="." to="." method="reset"]

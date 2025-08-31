@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvs6j6sp0kw6s"]
+
+[ext_resource type="Script" path="res://codes/levelfight.gd" id="1_5crlx"]
+
+[node name="levelfight" type="Node2D"]
+script = ExtResource("1_5crlx")
+G = 50000
